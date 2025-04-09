@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_apps/screens/home_screen.dart';
 // import 'package:flutter/cupertino.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -10,11 +11,12 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   final List appScreen = [
-    const Text("Home"),
+    const HomeScreen(),
     const Text("Search"),
     const Text("Tickets"),
     const Text("Profile"),
   ];
+
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
