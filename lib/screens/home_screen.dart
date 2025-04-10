@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_apps/base/res/media.dart';
 import 'package:ticket_apps/base/res/styles/app_styles.dart';
+import 'package:ticket_apps/base/widgets/app_double_text.dart';
+import 'package:ticket_apps/base/widgets/tickets_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +12,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  // final TextEditingController _controller = TextEditingController();
+
   String greeting() {
     var hour = DateTime.now().hour;
     if (hour < 12) {
@@ -66,14 +71,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: const Color(0xFFF4F6FD),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: const Row(
+                  child:  Row(
                     // <mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(Icons.search, color: Color(0xFFBFC205)),
-                      Text("Search"),
+                       Text("Search"),
                     ],
                   ),
                 ),
+                const SizedBox(height: 40),
+                AppDoubleText(
+                  bigText: "Upcoming Flights",
+                  smallText: "View all",
+                ),
+                 const SizedBox(height: 20),
+                TicketsView(),
+                // const SizedBox(height: 40),
+                // AppDoubleText(
+                //   bigText: "Upcoming Mettings",
+                //   smallText: "View all",
+                // ),
               ],
             ),
           ),
