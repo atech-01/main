@@ -28,7 +28,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Center(child: Text('My ticket'))),
+      // appBar: AppBar(title: const Center(child: Text('My ticket'))),
       body: Center(child: appScreen[_selectedIndex]),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onItemTapped,

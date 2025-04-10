@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'app_styles.dart';
+import 'package:ticket_apps/base/res/media.dart';
 import 'package:ticket_apps/base/res/styles/app_styles.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,8 +24,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppStyles.bgcolor,
       body: ListView(
         children: [
+          SizedBox(height: 50),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
@@ -42,21 +44,35 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     Container(
-                      color: Colors.red,
                       height: 50,
                       width: 50,
                       decoration: BoxDecoration(
+                        // color: Colors.red,
                         borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
-                          image: AssetImage('assets/images/image.jpeg'),
+                          image: AssetImage(AppImage.logo),
                         ),
                       ),
                     ),
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text("Search Icon"), Text("Empty Space")],
+                const SizedBox(height: 25),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 12,
+                  ),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF4F6FD),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Row(
+                    // <mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(Icons.search, color: Color(0xFFBFC205)),
+                      Text("Search"),
+                    ],
+                  ),
                 ),
               ],
             ),

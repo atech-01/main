@@ -9,4 +9,5 @@ class AppStyles {
     fontSize: 17,
     fontWeight: FontWeight.w500,
   );
+  static Color bgcolor = Color(0xFFeeedf2);
 }
