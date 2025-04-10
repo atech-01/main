@@ -41,7 +41,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text("Book Tickets", style: AppStyles.headLineStyle1),
                       ],
                     ),
-                    Container(color: Colors.red, height: 100, width: 100),
+                    Container(
+                      color: Colors.red,
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/image.jpeg'),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 Row(
