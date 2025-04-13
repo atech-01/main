@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_apps/base/all_tickets.dart';
 import 'package:ticket_apps/base/bottom_nav_bar.dart';
 
 void main() {
@@ -11,6 +12,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: BottomNavBar());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: BottomNavBar(),
+      routes: {"all_tickets": (context) => AllTickets()},
+    );
   }
 }

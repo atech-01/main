@@ -3,6 +3,8 @@ import 'package:ticket_apps/base/res/media.dart';
 import 'package:ticket_apps/base/res/styles/app_styles.dart';
 import 'package:ticket_apps/base/widgets/app_double_text.dart';
 import 'package:ticket_apps/base/widgets/tickets_view.dart';
+import 'package:ticket_apps/screens/all_json.dart';
+import 'package:ticket_apps/screens/widgets/hotels.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,7 +14,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   // final TextEditingController _controller = TextEditingController();
 
   String greeting() {
@@ -71,11 +72,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: const Color(0xFFF4F6FD),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child:  Row(
+                  child: Row(
                     // <mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(Icons.search, color: Color(0xFFBFC205)),
-                       Text("Search"),
+                      Text("Search"),
                     ],
                   ),
                 ),
@@ -83,14 +84,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 AppDoubleText(
                   bigText: "Upcoming Flights",
                   smallText: "View all",
+                  func: () => Navigator.pushNamed(context, "all_tickets"),
                 ),
-                 const SizedBox(height: 20),
-                TicketsView(),
-                // const SizedBox(height: 40),
-                // AppDoubleText(
-                //   bigText: "Upcoming Mettings",
-                //   smallText: "View all",
-                // ),
+                const SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children:
+                        ticketList
+                            .map(
+                              (singleTicket) =>
+                                  TicketsView(ticket: singleTicket),
+                            )
+                            .toList(),
+                  ),
+                ),
+                AppDoubleText(
+                  bigText: "Hotels",
+                  smallText: "View all",
+                  func: () => Navigator.pushNamed(context, "all_tickets"),
+                ),
+                Hotels(),
               ],
             ),
           ),
