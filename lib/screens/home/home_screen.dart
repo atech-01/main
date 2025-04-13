@@ -3,8 +3,8 @@ import 'package:ticket_apps/base/res/media.dart';
 import 'package:ticket_apps/base/res/styles/app_styles.dart';
 import 'package:ticket_apps/base/widgets/app_double_text.dart';
 import 'package:ticket_apps/base/widgets/tickets_view.dart';
-import 'package:ticket_apps/screens/all_json.dart';
-import 'package:ticket_apps/screens/widgets/hotels.dart';
+import 'package:ticket_apps/screens/home/all_json.dart';
+import 'package:ticket_apps/screens/home/widgets/hotels.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -37,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -102,9 +103,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 AppDoubleText(
                   bigText: "Hotels",
                   smallText: "View all",
-                  func: () => Navigator.pushNamed(context, "all_tickets"),
+                  func: () => debugPrint("Hello World"),
                 ),
-                Hotels(),
+                const SizedBox(height: 20),
+                // Hotels(),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children:
+                        hotelList
+                            .map((singleHotel) => Hotels(hotel: singleHotel))
+                            .toList(),
+                  ),
+                ),
               ],
             ),
           ),

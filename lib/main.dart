@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_apps/base/all_tickets.dart';
+import 'package:ticket_apps/screens/home/all_tickets.dart';
 import 'package:ticket_apps/base/bottom_nav_bar.dart';
 
 void main() {
