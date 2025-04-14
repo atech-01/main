@@ -8,6 +8,8 @@ class AppStyles {
   static Color kakiColor = const Color(0xFFd2bdb6);
   static Color planColor = Color(0xFFBFC2DF);
   static Color findTicketColor = Color(0xD91130CE);
+  static Color positionColor = Color(0xFF189999);
+
   static TextStyle headLineStyle1 = const TextStyle(
     fontSize: 26,
     fontWeight: FontWeight.bold,
