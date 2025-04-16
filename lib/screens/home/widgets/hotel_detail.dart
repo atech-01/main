@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:ticket_apps/base/res/styles/app_styles.dart';
 import 'package:ticket_apps/screens/home/all_json.dart';
@@ -11,12 +13,17 @@ class HotelDetail extends StatefulWidget {
 
 class _HotelDetailState extends State<HotelDetail> {
   late int hotelIndex = 0;
+  dynamic currentImage;
+  late String currentText;
 
   @override
   void didChangeDependencies() {
     if (ModalRoute.of(context)!.settings.arguments != null) {
       var args = ModalRoute.of(context)!.settings.arguments as Map;
       hotelIndex = args['index'];
+      currentImage = hotelList[hotelIndex]['image'];
+      currentText = hotelList[hotelIndex]['place'];
+      // debugPrint("The place is $hotelIndex");
     }
     super.didChangeDependencies();
   }
@@ -49,7 +56,7 @@ class _HotelDetailState extends State<HotelDetail> {
                 children: [
                   Positioned.fill(
                     child: Image.asset(
-                      "assets/image/${hotelList[hotelIndex]['image']}",
+                      "assets/image/$currentImage",
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -59,8 +66,9 @@ class _HotelDetailState extends State<HotelDetail> {
                     child: Container(
                       padding: EdgeInsets.symmetric(vertical: 4, horizontal: 4),
                       color: Colors.black.withAlpha(128),
+
                       child: Text(
-                        hotelList[hotelIndex]['place'],
+                        currentText,
                         style: TextStyle(color: Colors.white, fontSize: 24),
                       ),
                     ),
@@ -87,12 +95,29 @@ class _HotelDetailState extends State<HotelDetail> {
               Container(
                 height: 200,
                 child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: hotelList.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return Container(
-                      margin: EdgeInsets.all(16),
-                      child: Image.asset("assets/image/side_view.jpg"),
+                    final imagePath = hotelList[index]['image'];
+                    final textPath = hotelList[index]['place'];
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          currentImage = imagePath;
+                          currentText = textPath;
+                        });
+                      },
+                      child: Container(
+                        margin: EdgeInsets.all(16),
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          image: DecorationImage(
+                            image: AssetImage("assets/image/$imagePath"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
                     );
                   },
                 ),
