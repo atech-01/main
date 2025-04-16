@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_apps/base/res/media.dart';
 import 'package:ticket_apps/base/res/styles/app_styles.dart';
 import 'package:ticket_apps/base/widgets/app_double_text.dart';
+import 'package:ticket_apps/base/widgets/app_router.dart';
 import 'package:ticket_apps/base/widgets/tickets_view.dart';
 import 'package:ticket_apps/screens/home/all_json.dart';
 import 'package:ticket_apps/screens/home/widgets/hotels.dart';
@@ -85,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 AppDoubleText(
                   bigText: "Upcoming Flights",
                   smallText: "View all",
-                  func: () => Navigator.pushNamed(context, "all_tickets"),
+                  func: () => Navigator.pushNamed(context, AppRoutes.allTicket),
                 ),
                 const SizedBox(height: 20),
                 SingleChildScrollView(
@@ -103,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 AppDoubleText(
                   bigText: "Hotels",
                   smallText: "View all",
-                  func: () => debugPrint("Hello World"),
+                  func: () => Navigator.pushNamed(context, AppRoutes.allHotels),
                 ),
                 const SizedBox(height: 20),
                 // Hotels(),

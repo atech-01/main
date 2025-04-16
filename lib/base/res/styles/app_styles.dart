@@ -34,5 +34,6 @@ class AppStyles {
   static TextStyle headLineStyle4 = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w500,
+    color: Colors.grey.shade500,
   );
 }
