@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_apps/base/widgets/app_router.dart';
-// import 'package:ticket_apps/base/widgets/tickets_view.dart';
 import 'package:ticket_apps/screens/home/all_tickets.dart';
 import 'package:ticket_apps/base/bottom_nav_bar.dart';
 import 'package:ticket_apps/screens/home/widgets/all_hotels.dart';
 import 'package:ticket_apps/screens/home/widgets/hotel_detail.dart';
+import 'package:ticket_apps/screens/profile_screen.dart';
 import 'package:ticket_apps/screens/ticket/ticket_screen.dart';
 
 void main() {
@@ -19,13 +19,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: BottomNavBar(),
       routes: {
         AppRoutes.homePage: (context) => BottomNavBar(),
         AppRoutes.allTicket: (context) => AllTickets(),
         AppRoutes.ticketScreen: (context) => TicketScreen(),
         AppRoutes.allHotels: (context) => AllHotels(),
         AppRoutes.hotelDetail: (context) => HotelDetail(),
+        AppRoutes.profileScreen: (context) => ProfileScreen(),
       },
     );
   }

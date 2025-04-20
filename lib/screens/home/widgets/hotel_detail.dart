@@ -23,7 +23,7 @@ class _HotelDetailState extends State<HotelDetail> {
       hotelIndex = args['index'];
       currentImage = hotelList[hotelIndex]['image'];
       currentText = hotelList[hotelIndex]['place'];
-      // debugPrint("The place is $hotelIndex");
+      debugPrint("The place is $hotelIndex");
     }
     super.didChangeDependencies();
   }
