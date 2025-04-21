@@ -12,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppStyles.bgcolor,
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 12),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         children: [
           SizedBox(height: 50),
           Row(
