@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppStyles {
   static Color bgcolor = Color(0xFFeeedf2);
+  static Color primaryColor = Color(0xFF526799);
   static Color textColor = const Color(0xFF3b3b3b);
   static Color ticketColor = const Color(0xFF526799);
   static Color ticketOrange = const Color(0xFFF37B67);
